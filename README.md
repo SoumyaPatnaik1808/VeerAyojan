@@ -1,73 +1,83 @@
-# Welcome to your Lovable project
+##🦁 Veer Aayojans (वीर आयोजन)
 
-## Project info
+"Where the spirit of Veer Surendra Sai meets the energy of modern campus life."
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Veer Aayojans is the ultimate club management ecosystem designed specifically for the students and organizers of Veer Surendra Sai University of Technology (VSSUT). It transforms the way clubs interact with the student body by blending a professional management tool with a "Mini-Twitter" social experience.
 
-## How can I edit this code?
+##✨ Project Vision
 
-There are several ways of editing your application.
+Our goal is to centralize the vibrant club culture of VSSUT. No more hunting through dozens of WhatsApp groups or missing physical posters. Veer Aayojans provides a streamlined, high-performance portal for every "Aayojan" (event) on campus.
 
-**Use Lovable**
+##🌓 Dark Theme & Enthusiastic Design
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+The interface is built with a "Futuristic Dark" aesthetic—deep navy and charcoal backgrounds, electric blue accents (matching our Lion logo), and smooth, fluid animations that reflect the technical excellence of our institute.
 
-Changes made via Lovable will be committed automatically to this repo.
+##🚀 Key Features
 
-**Use your preferred IDE**
+#📺 Club Channels (The "YouTube" of VSSUT)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Unique Identity: Every club (Idea Club, Enigma, SAE, etc.) has its own "Channel."
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Video Archives: Access past event recordings, webinars, and cultural highlights.
 
-Follow these steps:
+Live Records: Keep a historical timeline of every milestone achieved by the club.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+#🐦 Mini-Twitter Feed
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Real-time Updates: A fast, scrolling feed of upcoming events and campus news.
 
-# Step 3: Install the necessary dependencies.
-npm i
+Personalized Newsletters: Receive events tailored to your interests directly in your feed.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Short-form Content: Organizers can post quick "tweets" about schedule changes or venue updates.
 
-**Edit a file directly in GitHub**
+#🛠️ Dual-User Experience
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Organizers: A powerful dashboard to manage events, track registrations, and publish newsletters.
 
-**Use GitHub Codespaces**
+Participants: A smooth, interactive portal to discover, follow, and join the campus buzz.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
 
-This project is built with:
+##🛠️ Tech Stack
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Frontend: React.js / Next.js
 
-## How can I deploy this project?
+Styling: Tailwind CSS (Dark Mode focused)
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Animations: Framer Motion & Lenis (Smooth Scroll)
 
-## Can I connect a custom domain to my Lovable project?
+Icons: Lucide React & FontAwesome
 
-Yes, you can!
+Design: Figma & v0.dev
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+##📂 Project Structure
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+├── public/              # Static assets (Logos, Icons)
+├── src/
+│   ├── components/      # Reusable UI (Cards, Feed, Nav)
+│   ├── animations/      # Framer Motion variants
+│   ├── hooks/           # Custom scrolling & state logic
+│   └── App.jsx          # Main landing & animation entry
+└── README.md            # You are here!
+
+
+##🤝 Contributing
+
+We are students building for students! If you are from VSSUT and want to contribute:
+
+Fork the repo.
+
+Create your feature branch (git checkout -b feature/AmazingFeature).
+
+Commit your changes (git commit -m 'Add some AmazingFeature').
+
+Push to the branch (git push origin feature/AmazingFeature).
+
+Open a Pull Request.
+
+📜 License
+
+Distributed under the MIT License. See LICENSE for more information.
+
+Built with ❤️ by students of VSSUT.
+जय वीर सुरेन्द्र साय! 🦁🚩

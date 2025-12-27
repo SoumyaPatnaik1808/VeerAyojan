@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { 
-  Calendar, 
-  Video, 
-  Users, 
-  Bell, 
-  LayoutDashboard, 
-  Newspaper 
+import {
+  Calendar,
+  Video,
+  Users,
+  Bell,
+  LayoutDashboard,
+  Newspaper
 } from "lucide-react";
 
 const features = [

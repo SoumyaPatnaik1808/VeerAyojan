@@ -1,12 +1,27 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Particles from './Animations/Particles';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Gradient Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+
+
+      <div className="w-full h-full absolute inset-0 z-0 ">
+        <Particles
+          particleColors={['#1004ffff', '#0109ffff']}
+          particleCount={400}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
+      <div className="absolute z-10 inset-0 overflow-hidden pointer-events-none">
         <div
           className="hero-gradient-orb w-[600px] h-[600px] bg-primary/30 top-[-10%] left-[-10%] animate-pulse-glow"
           style={{ animationDelay: "0s" }}
@@ -59,7 +74,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
           >
-            Veer Aayojans connects every student to every club and event at VSSUT. 
+            Veer Aayojans connects every student to every club and event at VSSUT.
             Discover, participate, and never miss what's happening on campus.
           </motion.p>
 

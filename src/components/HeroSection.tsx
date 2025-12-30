@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Particles from './Animations/Particles';
+
+
 
 const HeroSection = () => {
   return (
@@ -10,16 +11,7 @@ const HeroSection = () => {
 
 
       <div className="w-full h-full absolute inset-0 z-0 ">
-        <Particles
-          particleColors={['#1004ffff', '#0109ffff']}
-          particleCount={400}
-          particleSpread={10}
-          speed={0.1}
-          particleBaseSize={100}
-          moveParticlesOnHover={true}
-          alphaParticles={false}
-          disableRotation={false}
-        />
+        
       </div>
       <div className="absolute z-10 inset-0 overflow-hidden pointer-events-none">
         <div

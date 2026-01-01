@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Gradient Orbs */}
+      
 
 
       <div className="w-full h-full absolute inset-0 z-0 ">
@@ -28,12 +28,12 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Grid Pattern */}
+      
       <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--border)/0.3)_1px,transparent_1px),linear-gradient(to_right,hsl(var(--border)/0.3)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ const HeroSection = () => {
             </span>
           </motion.div>
 
-          {/* Main Headline */}
+          
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ const HeroSection = () => {
             <span className="text-gradient-accent">Endless Campus Energy.</span>
           </motion.h1>
 
-          {/* Description */}
+          
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ const HeroSection = () => {
             Discover, participate, and never miss what's happening on campus.
           </motion.p>
 
-          {/* CTA Buttons */}
+         
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ const HeroSection = () => {
             </Button>
           </motion.div>
 
-          {/* Stats */}
+       
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom Gradient Fade */}
+      
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );

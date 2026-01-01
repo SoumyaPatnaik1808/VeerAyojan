@@ -5,6 +5,8 @@ import LogoSection from "@/components/LogoSection";
 import WhySection from "@/components/WhySection";
 import Footer from "@/components/Footer";
 import ClickSpark from '@/components/Animations/ClickSpark';
+import { Clubs } from "@/components/Clubs";
+
 
 const Index = () => {
   return (
@@ -20,13 +22,14 @@ const Index = () => {
   sparkCount={8}
   duration={400}
 >
-  {/* Your content here */}
+  
 
      <div className="relative z-10">
       <Navbar />
       <main>
         <HeroSection />
         <LogoSection />
+        <Clubs/>
         <FeaturesSection />
         <WhySection />
        

@@ -8,6 +8,8 @@ import {
   Newspaper
 } from "lucide-react";
 
+
+
 const features = [
   {
     icon: Users,
@@ -68,7 +70,9 @@ const FeaturesSection = () => {
         </motion.div>
 
         {/* Features Grid */}
+       
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -90,8 +94,13 @@ const FeaturesSection = () => {
                 {feature.description}
               </p>
             </motion.div>
+            
           ))}
+          
         </div>
+        
+        
+        
       </div>
     </section>
   );

@@ -1,83 +1,244 @@
-##🦁 Veer Aayojans (वीर आयोजन)
+# 🎓 VeerAyojan - Campus Event Management Platform
 
-"Where the spirit of Veer Surendra Sai meets the energy of modern campus life."
+<div align="center">
 
-Veer Aayojans is the ultimate club management ecosystem designed specifically for the students and organizers of Veer Surendra Sai University of Technology (VSSUT). It transforms the way clubs interact with the student body by blending a professional management tool with a "Mini-Twitter" social experience.
+![VeerAyojan Banner](https://img.shields.io/badge/VeerAyojan-Campus%20Events-blue?style=for-the-badge)
+[![Made for VSSUT Students](https://img.shields.io/badge/Made%20for-VSSUT-orange?style=for-the-badge)](https://www.vssut.ac.in/)
 
-##✨ Project Vision
+**Unifying Campus Life, All Events at One Place**
 
-Our goal is to centralize the vibrant club culture of VSSUT. No more hunting through dozens of WhatsApp groups or missing physical posters. Veer Aayojans provides a streamlined, high-performance portal for every "Aayojan" (event) on campus.
+A modern, feature-rich platform designed specifically for Veer Surendra Sai University of Technology (VSSUT) students to discover, organize, and participate in club activities and events.
 
-##🌓 Dark Theme & Enthusiastic Design
+[Features](#-key-features) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started) • [Screenshots](#-screenshots) • [Contributing](#-contributing)
 
-The interface is built with a "Futuristic Dark" aesthetic—deep navy and charcoal backgrounds, electric blue accents (matching our Lion logo), and smooth, fluid animations that reflect the technical excellence of our institute.
+</div>
 
-##🚀 Key Features
+---
 
-#📺 Club Channels (The "YouTube" of VSSUT)
+## 🌟 Overview
 
-Unique Identity: Every club (Idea Club, Enigma, SAE, etc.) has its own "Channel."
+VeerAyojan is a comprehensive event management ecosystem that transforms how students and clubs interact on campus. Say goodbye to scattered announcements and missed opportunities—everything you need is now in one beautiful, intuitive platform.
 
-Video Archives: Access past event recordings, webinars, and cultural highlights.
+### 🎯 Problem We Solve
 
-Live Records: Keep a historical timeline of every milestone achieved by the club.
+- **For Students**: Never miss club events, workshops, or competitions across campus
+- **For Organizers**: Streamlined event creation, management, and student engagement
+- **For Clubs**: Centralized hub for visibility and member communication
 
-#🐦 Mini-Twitter Feed
+---
 
-Real-time Updates: A fast, scrolling feed of upcoming events and campus news.
+## ✨ Key Features
 
-Personalized Newsletters: Receive events tailored to your interests directly in your feed.
+### 🗓️ **Event Discovery & Management**
+- Browse upcoming events from all campus clubs in one feed
+- Advanced filtering by category, date, club, and interests
+- Real-time event updates and notifications
+- RSVP and attendance tracking
 
-Short-form Content: Organizers can post quick "tweets" about schedule changes or venue updates.
+### 📢 **Dynamic News Feed**
+- Club organizers can post announcements, updates, and achievements
+- Rich media support (images, videos, documents)
+- Engagement through likes, comments, and shares
+- Trending events and popular activities spotlight
 
-#🛠️ Dual-User Experience
+### 💬 **Interactive Communication**
+- Direct messaging between students and organizers
+- Club-specific discussion forums
+- Real-time chat for event participants
+- Q&A sections for events
 
-Organizers: A powerful dashboard to manage events, track registrations, and publish newsletters.
+### 🎥 **Video Conferencing Integration**
+- Built-in video conferencing for virtual events
+- Seamless integration for hybrid (online + offline) events
+- Screen sharing and collaborative features
+- Support for workshops, seminars, and club meetings
 
-Participants: A smooth, interactive portal to discover, follow, and join the campus buzz.
+### 👥 **User Management**
+- Role-based access (Student, Organizer, Admin)
+- Customizable user profiles with interests and clubs
+- Follow favorite clubs for personalized updates
+- Achievement badges and participation tracking
 
+### 🎨 **Modern, User-Friendly Interface**
+- Clean, intuitive design that feels native
+- Fully responsive across desktop, tablet, and mobile
+- Dark mode support for comfortable browsing
+- Fast loading times and smooth animations
 
+---
 
-##🛠️ Tech Stack
+## 🛠️ Tech Stack
 
-Frontend: React.js / Next.js
+### Frontend
+- **React.js** - Component-based UI architecture
+- **Tailwind CSS** - Modern, utility-first styling
+- **Redux/Context API** - State management
+- **React Router** - Seamless navigation
 
-Styling: Tailwind CSS (Dark Mode focused)
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web application framework
+- **MongoDB** - NoSQL database for flexible data models
+- **Socket.io** - Real-time bidirectional communication
 
-Animations: Framer Motion & Lenis (Smooth Scroll)
+### Additional Technologies
+- **JWT** - Secure authentication
+- **WebRTC** - Video conferencing capabilities
+- **Cloudinary/AWS S3** - Media storage and CDN
+- **Nodemailer** - Email notifications
 
-Icons: Lucide React & FontAwesome
+---
 
-Design: Figma & v0.dev
+## 🚀 Getting Started
 
-##📂 Project Structure
+### Prerequisites
+- Node.js (v14 or higher)
+- MongoDB (v4.4 or higher)
+- npm or yarn package manager
 
-├── public/              # Static assets (Logos, Icons)
-├── src/
-│   ├── components/      # Reusable UI (Cards, Feed, Nav)
-│   ├── animations/      # Framer Motion variants
-│   ├── hooks/           # Custom scrolling & state logic
-│   └── App.jsx          # Main landing & animation entry
-└── README.md            # You are here!
+### Installation
 
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Sush2007/VeerAyojan-Website.git
+   cd VeerAyojan-Website
+   ```
 
-##🤝 Contributing
+2. **Install dependencies**
+   ```bash
+   # Install backend dependencies
+   cd backend
+   npm install
 
-We are students building for students! If you are from VSSUT and want to contribute:
+   # Install frontend dependencies
+   cd ../frontend
+   npm install
+   ```
 
-Fork the repo.
+3. **Configure environment variables**
+   
+   Create `.env` files in both backend and frontend directories:
+   
+   **Backend `.env`:**
+   ```env
+   PORT=5000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   CLOUDINARY_URL=your_cloudinary_url
+   EMAIL_SERVICE=your_email_service
+   EMAIL_USER=your_email
+   EMAIL_PASS=your_password
+   ```
 
-Create your feature branch (git checkout -b feature/AmazingFeature).
+   **Frontend `.env`:**
+   ```env
+   REACT_APP_API_URL=http://localhost:5000
+   REACT_APP_SOCKET_URL=http://localhost:5000
+   ```
 
-Commit your changes (git commit -m 'Add some AmazingFeature').
+4. **Run the application**
+   ```bash
+   # Run backend (from backend directory)
+   npm run dev
 
-Push to the branch (git push origin feature/AmazingFeature).
+   # Run frontend (from frontend directory)
+   npm start
+   ```
 
-Open a Pull Request.
+5. **Access the application**
+   - Frontend: `http://localhost:3000`
+   - Backend API: `http://localhost:5000`
 
-📜 License
+---
 
-Distributed under the MIT License. See LICENSE for more information.
+## 📸 Screenshots
 
-Built with ❤️ by students of VSSUT.
-जय वीर सुरेन्द्र साय! 🦁🚩
+<div align="center">
+
+### Home Page
+*Modern landing page with upcoming events and featured clubs*
+
+### Event Dashboard
+*Comprehensive view of all campus events with smart filters*
+
+### Video Conference
+*Integrated video calling for virtual and hybrid events*
+
+### Club Management
+*Intuitive interface for organizers to manage their club activities*
+
+</div>
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Core event management system
+- [x] Video conferencing integration
+- [x] Real-time notifications
+- [ ] Mobile app (React Native)
+- [ ] Calendar integration (Google Calendar, Outlook)
+- [ ] Analytics dashboard for organizers
+- [ ] Payment gateway for paid events
+- [ ] QR code-based attendance
+- [ ] AI-powered event recommendations
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from the VSSUT community and beyond! Here's how you can help:
+
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
+3. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
+4. **Push to the branch** (`git push origin feature/AmazingFeature`)
+5. **Open a Pull Request**
+
+### Contribution Guidelines
+- Follow the existing code style
+- Write clear commit messages
+- Add tests for new features
+- Update documentation as needed
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👨‍💻 Author
+
+- GitHub: [@Sush2007](https://github.com/Sush2007)
+- Project Link: [VeerAyojan-Website](https://github.com/Sush2007/VeerAyojan-Website)
+
+---
+
+## 🙏 Acknowledgments
+
+- VSSUT community for inspiration and feedback
+- All club coordinators who provided valuable insights
+- Open source community for amazing tools and libraries
+
+---
+
+## 📞 Contact & Support
+
+Have questions or suggestions? We'd love to hear from you!
+
+- **Issues**: [GitHub Issues](https://github.com/Sush2007/VeerAyojan-Website/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Sush2007/VeerAyojan-Website/discussions)
+
+---
+
+<div align="center">
+
+### ⭐ Star this repository if you find it helpful!
+
+Made with ❤️ for VSSUT by Team Codevengerz
+
+**[Back to Top](#-veerayojan---campus-event-management-platform)**
+
+</div>

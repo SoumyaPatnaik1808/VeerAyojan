@@ -47,11 +47,6 @@ VeerAyojan is a comprehensive event management ecosystem that transforms how stu
 - Real-time chat for event participants
 - Q&A sections for events
 
-### 🎥 **Video Conferencing Integration**
-- Built-in video conferencing for virtual events
-- Seamless integration for hybrid (online + offline) events
-- Screen sharing and collaborative features
-- Support for workshops, seminars, and club meetings
 
 ### 👥 **User Management**
 - Role-based access (Student, Organizer, Admin)
@@ -74,6 +69,8 @@ VeerAyojan is a comprehensive event management ecosystem that transforms how stu
 - **Tailwind CSS** - Modern, utility-first styling
 - **Redux/Context API** - State management
 - **React Router** - Seamless navigation
+- **Framer-motion, GSAP** - Animation Library
+- **React Bits** - Intreactive Components
 
 ### Backend
 - **Node.js** - Runtime environment
@@ -171,19 +168,6 @@ VeerAyojan is a comprehensive event management ecosystem that transforms how stu
 
 ---
 
-## 🗺️ Roadmap
-
-- [x] Core event management system
-- [x] Video conferencing integration
-- [x] Real-time notifications
-- [ ] Mobile app (React Native)
-- [ ] Calendar integration (Google Calendar, Outlook)
-- [ ] Analytics dashboard for organizers
-- [ ] Payment gateway for paid events
-- [ ] QR code-based attendance
-- [ ] AI-powered event recommendations
-
----
 
 ## 🤝 Contributing
 
@@ -211,8 +195,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-- GitHub: [@Sush2007](https://github.com/Sush2007)
-- Project Link: [VeerAyojan-Website](https://github.com/Sush2007/VeerAyojan-Website)
+- GitHub: [@Sush2007](https://github.com/Sush2007) , [@SoumyaPatnaik1808](https://github.com/SoumyaPatnaik1808)
+- Project Link: [VeerAyojan](https://github.com/SoumyaPatnaik1808/VeerAyojan)
 
 ---
 
@@ -228,8 +212,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Have questions or suggestions? We'd love to hear from you!
 
-- **Issues**: [GitHub Issues](https://github.com/Sush2007/VeerAyojan-Website/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Sush2007/VeerAyojan-Website/discussions)
+- **Issues**: [GitHub Issues](https://github.com/SoumyaPatnaik1808/VeerAyojan/issues)
+
 
 ---
 

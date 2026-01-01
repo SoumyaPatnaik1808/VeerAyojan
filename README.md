@@ -93,6 +93,19 @@ VeerAyojan is a comprehensive event management ecosystem that transforms how stu
 - MongoDB (v4.4 or higher)
 - npm or yarn package manager
 
+## 🗺️ Roadmap
+
+-  Core event management system
+-  Video conferencing integration
+-  Real-time notifications
+-  Mobile app (React Native)
+-  Calendar integration (Google Calendar, Outlook)
+-  Analytics dashboard for organizers
+-  Payment gateway for paid events
+-  QR code-based attendance
+-  AI-powered event recommendations
+
+
 ### Installation
 
 1. **Clone the repository**

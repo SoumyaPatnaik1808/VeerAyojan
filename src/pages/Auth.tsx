@@ -309,7 +309,7 @@ const Auth = () => {
             </motion.div>
 
             <p className="text-center text-sm text-muted-foreground">
-              New to VSSUT?{" "}
+              New to VeerAyojans?{" "}
               <a href="#" className="text-cyan-400 hover:text-cyan-300 transition-colors font-medium">
                 Create account
               </a>
@@ -324,7 +324,7 @@ const Auth = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2 }}
         onClick={() => navigate("/")}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-foreground text-sm transition-colors"
+        className="absolute top-26 mt-10 ml-10 border p-5 rounded-xl -translate-x-1/2 text-muted-foreground hover:text-foreground text-sm transition-colors"
       >
         ← Back to Home
       </motion.button>

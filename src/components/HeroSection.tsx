@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import Navbar from "./Navbar";
 
 
 const HeroSection = () => {
   return (
+   
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      
+       <Navbar/>
 
 
       <div className="w-full h-full absolute inset-0 z-0 ">
@@ -77,36 +78,15 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button variant="hero" size="lg" className="group">
-              Explore Events
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+           
             <Button variant="hero-outline" size="lg" className="group">
               <Play className="w-5 h-5" />
-              Join Your Clubs
+              Get Started
             </Button>
           </motion.div>
 
        
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="grid grid-cols-3 gap-8 mt-16 max-w-lg mx-auto"
-          >
-            {[
-              { value: "50+", label: "Active Clubs" },
-              { value: "200+", label: "Events/Year" },
-              { value: "5K+", label: "Students" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-gradient-primary">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
+          
         </div>
       </div>
 

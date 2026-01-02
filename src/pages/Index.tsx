@@ -6,6 +6,7 @@ import WhySection from "@/components/WhySection";
 import Footer from "@/components/Footer";
 import ClickSpark from '@/components/Animations/ClickSpark';
 import { Clubs } from "@/components/Clubs";
+import { ParticleTextEffect } from "@/components/Animations/particle-text-effect";
 
 
 const Index = () => {
@@ -25,8 +26,9 @@ const Index = () => {
   
 
      <div className="relative z-10">
-      <Navbar />
+      <ParticleTextEffect />
       <main>
+        
         <HeroSection />
         <LogoSection />
         <Clubs/>

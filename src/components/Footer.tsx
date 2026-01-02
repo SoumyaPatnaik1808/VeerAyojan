@@ -50,9 +50,7 @@ const Footer = () => {
               <button className="bg-gradient-primary text-primary-foreground font-semibold px-8 py-4 rounded-2xl shadow-soft hover:shadow-glow hover:scale-105 transition-all duration-300">
                 Get Started Free
               </button>
-              <button className="border-2 border-primary/50 bg-primary/10 text-foreground font-semibold px-8 py-4 rounded-2xl hover:bg-primary/20 hover:border-primary hover:scale-105 transition-all duration-300">
-                Learn More
-              </button>
+             
             </div>
           </div>
         </motion.div>
@@ -62,9 +60,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary-foreground" />
-              </div>
+              
               <span className="text-xl font-bold text-foreground">
                 Veer<span className="text-gradient-primary">Aayojans</span>
               </span>
@@ -136,9 +132,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {currentYear} Veer Aayojans. Built with ❤️ by VSSUT Students.
-          </p>
+         
           <div className="flex items-center gap-4">
             <a
               href="#"

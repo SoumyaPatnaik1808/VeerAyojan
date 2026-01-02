@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎓 VeerAyojan - Campus Event Management Platform
 
 <div align="center">
@@ -239,3 +240,7 @@ Made with ❤️ for VSSUT by Team Codevengerz
 **[Back to Top](#-veerayojan---campus-event-management-platform)**
 
 </div>
+=======
+# VeerAyojan
+Veer Aayojans 🚀 is a media-first club management platform for VSSUT Burla 🎓. It preserves club legacies 📚 through dedicated channels and delivers real-time, personalized campus updates ⚡. Built with a futuristic, Sambalpuri-inspired design 🎨, it ensures no event is missed and no history is lost 🧠.
+>>>>>>> b8b759d502c5423f6edff027e7772b204418384f

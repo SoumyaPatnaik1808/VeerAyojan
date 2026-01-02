@@ -125,10 +125,8 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
-              <Button variant="hero-outline" className="w-full">
-                Log In
               <Button variant="hero-outline" className="w-full" asChild>
-                <Link to="/auth">Sign In</Link>
+                <Link to="/auth">Log In</Link>
               </Button>
               <Button variant="hero" className="w-full" asChild>
                 <Link to="/auth">Get Started</Link>

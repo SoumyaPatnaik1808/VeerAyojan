@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, Moon, Sun, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,11 +76,11 @@ const Navbar = () => {
           >
             {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </Button>
-          <Button variant="hero-outline" size="sm">
-            Sign In
+          <Button variant="hero-outline" size="sm" asChild>
+            <Link to="/auth">Sign In</Link>
           </Button>
-          <Button variant="hero" size="sm">
-            Get Started
+          <Button variant="hero" size="sm" asChild>
+            <Link to="/auth">Get Started</Link>
           </Button>
         </div>
 
@@ -124,11 +125,11 @@ const Navbar = () => {
               </a>
             ))}
             <div className="flex flex-col gap-3 pt-4 border-t border-border">
-              <Button variant="hero-outline" className="w-full">
-                Sign In
+              <Button variant="hero-outline" className="w-full" asChild>
+                <Link to="/auth">Sign In</Link>
               </Button>
-              <Button variant="hero" className="w-full">
-                Get Started
+              <Button variant="hero" className="w-full" asChild>
+                <Link to="/auth">Get Started</Link>
               </Button>
             </div>
           </div>

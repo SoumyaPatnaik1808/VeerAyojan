@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Moon, Sun, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
 import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
@@ -11,6 +12,7 @@ const Auth = () => {
   const [showOrgPassword, setShowOrgPassword] = useState(false);
   const [showPartPassword, setShowPartPassword] = useState(false);
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState<"organizer" | "participant">("organizer");
 
   useEffect(() => {
     document.documentElement.classList.add("dark");
@@ -22,7 +24,7 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen flex relative overflow-hidden bg-background">
+    <div className="min-h-screen flex flex-col lg:flex-row  relative overflow-hidden bg-background">
       {/* Sambalpuri-inspired geometric pattern overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -42,16 +44,43 @@ const Auth = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2 }}
         onClick={toggleTheme}
-        className="absolute top-6 right-6 z-50 w-12 h-12 rounded-xl bg-secondary/50 backdrop-blur-lg border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
+        className="absolute top-4 right-4 lg:top-6 lg:right-6 z-50 w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-secondary/50 backdrop-blur-lg border border-border/50 flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
       >
         <motion.div
           initial={false}
           animate={{ rotate: isDark ? 0 : 180 }}
           transition={{ duration: 0.5 }}
         >
-          {isDark ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+           {isDark ? <Moon className="w-4 h-4 lg:w-5 lg:h-5" /> : <Sun className="w-4 h-4 lg:w-5 lg:h-5" />}
         </motion.div>
       </motion.button>
+
+      {/* Mobile Tab Switcher */}
+      <div className="lg:hidden flex justify-center pt-16 pb-4 px-4 relative z-10">
+        <div className="glass-card p-1 rounded-2xl flex gap-1">
+          <button
+            onClick={() => setActiveTab("organizer")}
+            className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
+              activeTab === "organizer"
+                ? "bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Organizer
+          </button>
+          <button
+            onClick={() => setActiveTab("participant")}
+            className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
+              activeTab === "participant"
+                ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg"
+                : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            Participant
+          </button>
+        </div>
+      </div>
+      
 
       {/* Left Section - Organizers */}
       <motion.div
@@ -71,19 +100,19 @@ const Auth = () => {
         />
 
         {/* Organizer copper accent */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-blue-600/20 to-amber-600/10 rounded-full blur-[100px] opacity-50" />
+        <div className="absolute top-0 left-0 w-48 lg:w-64 h-48 lg:h-64 bg-gradient-to-br from-blue-600/20 to-amber-600/10 rounded-full blur-[100px] opacity-50" />
 
         <div className="relative z-10 w-full max-w-md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-center mb-10"
+            className="text-center mb-8 lg:mb-10"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 lg:mb-3">
               For <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Organizers</span>
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-base lg:text-lg">
               Manage clubs. Preserve legacy.
             </p>
           </motion.div>
@@ -92,7 +121,7 @@ const Auth = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="space-y-5"
+            className="space-y-4 lg:space-y-5"
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="space-y-2">
@@ -100,7 +129,7 @@ const Auth = () => {
               <Input
                 type="text"
                 placeholder="Enter your email or username"
-                className="h-12 bg-secondary/50 border-border/50 focus:border-blue-500/50 focus:ring-blue-500/20 rounded-xl transition-all duration-300"
+                className="h-11 lg:h-12 bg-secondary/50 border-border/50 focus:border-blue-500/50 focus:ring-blue-500/20 rounded-xl transition-all duration-300"
               />
             </div>
 
@@ -110,7 +139,7 @@ const Auth = () => {
                 <Input
                   type={showOrgPassword ? "text" : "password"}
                   placeholder="Enter your password"
-                  className="h-12 bg-secondary/50 border-border/50 focus:border-blue-500/50 focus:ring-blue-500/20 rounded-xl pr-12 transition-all duration-300"
+                  className="h-11 lg:h-12 bg-secondary/50 border-border/50 focus:border-blue-500/50 focus:ring-blue-500/20 rounded-xl pr-12 transition-all duration-300"
                 />
                 <button
                   type="button"
@@ -138,7 +167,7 @@ const Auth = () => {
             >
               <Button
                 type="submit"
-                className="w-full h-12 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
+                className="w-full h-11 lg:h-12 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
               >
                 Login as Organizer
               </Button>
@@ -155,7 +184,7 @@ const Auth = () => {
       </motion.div>
 
       {/* Center Divider */}
-      <div className="relative w-px flex items-center justify-center z-20">
+      <div className="hidden lg:flex relative w-px items-center justify-center z-20">
         {/* Animated line drawing from top to bottom */}
         <motion.div
           initial={{ scaleY: 0 }}
@@ -222,7 +251,9 @@ const Auth = () => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="flex-1 flex items-center justify-center p-8 relative"
+        className={`flex-1 flex items-center justify-center p-6 lg:p-8 relative ${
+          activeTab !== "participant" ? "hidden lg:flex" : "flex"
+        }`}
         onMouseEnter={() => setHoveredSide("right")}
         onMouseLeave={() => setHoveredSide(null)}
       >
@@ -235,19 +266,19 @@ const Auth = () => {
         />
 
         {/* Participant cyan accent */}
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-cyan-500/20 to-indigo-500/10 rounded-full blur-[100px] opacity-50" />
+        <div className="absolute bottom-0 right-0 w-48 lg:w-64 h-48 lg:h-64 bg-gradient-to-tl from-cyan-500/20 to-indigo-500/10 rounded-full blur-[100px] opacity-50" />
 
         <div className="relative z-10 w-full max-w-md">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-center mb-10"
+            className="text-center mb-8 lg:mb-10"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 lg:mb-3">
               For <span className="bg-gradient-to-r from-cyan-400 to-accent bg-clip-text text-transparent">Participants</span>
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-base lg:text-lg">
               Discover events. Follow what matters.
             </p>
           </motion.div>
@@ -256,7 +287,7 @@ const Auth = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="space-y-5"
+            className="space-y-4 lg:space-y-5"
             onSubmit={(e) => e.preventDefault()}
           >
             <div className="space-y-2">
@@ -264,7 +295,7 @@ const Auth = () => {
               <Input
                 type="text"
                 placeholder="Enter your email or roll number"
-                className="h-12 bg-secondary/50 border-border/50 focus:border-cyan-500/50 focus:ring-cyan-500/20 rounded-xl transition-all duration-300"
+                className="h-11 lg:h-12 bg-secondary/50 border-border/50 focus:border-cyan-500/50 focus:ring-cyan-500/20 rounded-xl transition-all duration-300"
               />
             </div>
 
@@ -274,7 +305,7 @@ const Auth = () => {
                 <Input
                   type={showPartPassword ? "text" : "password"}
                   placeholder="Enter your password"
-                  className="h-12 bg-secondary/50 border-border/50 focus:border-cyan-500/50 focus:ring-cyan-500/20 rounded-xl pr-12 transition-all duration-300"
+                  className="h-11 lg:h-12 bg-secondary/50 border-border/50 focus:border-cyan-500/50 focus:ring-cyan-500/20 rounded-xl pr-12 transition-all duration-300"
                 />
                 <button
                   type="button"
@@ -302,7 +333,7 @@ const Auth = () => {
             >
               <Button
                 type="submit"
-                className="w-full h-12 bg-gradient-to-r from-cyan-500 to-accent hover:from-cyan-400 hover:to-blue-400 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+                className="w-full h-11 lg:h-12 bg-gradient-to-r from-cyan-500 to-accent hover:from-cyan-400 hover:to-blue-400 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
               >
                 Login as Participant
               </Button>
@@ -324,7 +355,7 @@ const Auth = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2 }}
         onClick={() => navigate("/")}
-        className="absolute top-26 mt-10 ml-10 border p-5 rounded-xl -translate-x-1/2 text-muted-foreground hover:text-foreground text-sm transition-colors"
+        className="absolute bottom-4 lg:bottom-6 left-1/2 -translate-x-1/2 text-muted-foreground hover:text-foreground text-sm transition-colors"
       >
         ← Back to Home
       </motion.button>

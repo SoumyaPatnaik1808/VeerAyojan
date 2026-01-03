@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
    
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-       <Navbar/>
+       
 
 
       <div className="w-full h-full absolute inset-0 z-0 ">

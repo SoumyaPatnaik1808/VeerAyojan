@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 
 const HeroSection = () => {
@@ -78,12 +78,14 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-           
+           <Link to="/register"> 
             <Button variant="hero-outline" size="lg" className="group">
               <Play className="w-5 h-5" />
               Get Started
             </Button>
+             </Link>
           </motion.div>
+         
 
        
           

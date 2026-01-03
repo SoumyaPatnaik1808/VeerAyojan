@@ -32,7 +32,7 @@ const items = [
   },
   {
     name: "Get Started",
-    url  : "/auth",
+    url  : "/register",
     icon : UserPlus,
   }
 ]

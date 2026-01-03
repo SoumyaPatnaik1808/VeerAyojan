@@ -12,10 +12,8 @@ import { ParticleTextEffect } from "@/components/Animations/particle-text-effect
 const Index = () => {
   return (
      <> 
-  
-      <div className="min-h-screen bg-background">
-      
-
+     
+  <div className="min-h-screen bg-background">
  <ClickSpark
   sparkColor='#786401ff'
   sparkSize={10}

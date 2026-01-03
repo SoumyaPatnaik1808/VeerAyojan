@@ -56,7 +56,7 @@ export function Navbar({ items, className, defaultActive = "Home" }: NavBarProps
     <div className="fixed top-5 left-0 right-0 z-[9999]">
       <div className="flex justify-center pt-6">
         <motion.div 
-          className="flex items-center gap-3 bg-black/50 border border-white/10 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg relative"
+          className="flex items-center gap-1 md:gap-3 bg-black/50 border border-white/10 backdrop-blur-lg py-2 px-2 rounded-full shadow-lg relative max-w-[95vw] overflow-x-auto md:overflow-visible [&::-webkit-scrollbar]:hidden"
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
@@ -91,7 +91,7 @@ export function Navbar({ items, className, defaultActive = "Home" }: NavBarProps
                 onMouseEnter={() => setHoveredTab(item.name)}
                 onMouseLeave={() => setHoveredTab(null)}
                 className={cn(
-                  "relative cursor-pointer text-sm font-semibold px-6 py-3 rounded-full transition-all duration-300",
+                  "relative cursor-pointer text-sm font-semibold px-3 py-2 md:px-6 md:py-3 rounded-full transition-all duration-300 shrink-0",
                   "flex items-center gap-2",
                   "text-white/70 hover:text-white",
                   isActive && "text-white"

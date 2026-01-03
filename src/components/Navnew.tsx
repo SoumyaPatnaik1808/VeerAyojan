@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react" // Import React
-import { FileText, CreditCard, Info, User, UserPlus } from "lucide-react"
+import { FileText, CreditCard, Info, User, UserPlus, Sparkles } from "lucide-react"
 import { Navbar } from "@/components/Animations/Navbar"
 
 const items = [
@@ -18,7 +18,7 @@ const items = [
   {
     name: "Features",
     url: "#features",
-    icon: CreditCard,
+    icon: Sparkles,
   },
   {
     name: "About",
@@ -32,7 +32,7 @@ const items = [
   },
   {
     name: "Get Started",
-    url  : "",
+    url  : "/auth",
     icon : UserPlus,
   }
 ]

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Moon, Sun, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Particles from "@/components/Animations/Particles";
 
 const Auth = () => {
@@ -187,12 +187,15 @@ const Auth = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
+                    
                     <Button
                       type="submit"
                       className="w-full h-11 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
                     >
                       Login as Organizer
                     </Button>
+                    
+                    
                   </motion.div>
 
                   
@@ -261,12 +264,14 @@ const Auth = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
+                    <Link to="/feed">
                     <Button
                       type="submit"
                       className="w-full h-11 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-400 hover:to-indigo-400 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
                     >
                       Login as Participant
                     </Button>
+                     </Link>
                   </motion.div>
 
                   <p className="text-center text-sm text-muted-foreground">

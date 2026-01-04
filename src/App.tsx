@@ -10,6 +10,7 @@ import WhySection from "./components/WhySection";
 import FeaturesSection from "./components/FeaturesSection";
 import {Clubs} from "./components/Clubs";
 import Register from "./pages/Register";
+import Feed from "./pages/Feed";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/about" element={<WhySection />} />
           <Route path="/features" element={<FeaturesSection />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/feed" element={<Feed />}>  </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -12,6 +12,8 @@ import {Clubs} from "./components/Clubs";
 import Register from "./pages/Register";
 import Feed from "./pages/Feed";
 import Events from "./pages/Events";
+import Organizer from "./pages/Organizer";
+import CreatePost from "./components/Organizer/CreatePost";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/register" element={<Register />} />
           <Route path="/feed" element={<Feed />}>  </Route>
           <Route path="/events" element={<Events />}>  </Route>
+          <Route path="/organizer" element={<Organizer />}>  </Route>
+          <Route path="/createpost" element={<CreatePost />}>  </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

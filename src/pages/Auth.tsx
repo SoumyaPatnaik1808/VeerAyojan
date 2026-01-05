@@ -187,13 +187,14 @@ const Auth = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    
+                    <Link to="/organizer"> 
                     <Button
                       type="submit"
                       className="w-full h-11 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
                     >
                       Login as Organizer
                     </Button>
+                    </Link>
                     
                     
                   </motion.div>

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 import Particles from "@/components/Animations/Particles";
+import { Link } from "react-router-dom";
 
 const interestOptions = [
   { id: "robotics", label: "Robotics", icon: "🤖" },
@@ -117,7 +118,7 @@ const Register = () => {
     
     // Redirect after success animation
     setTimeout(() => {
-      navigate("/auth");
+      navigate("/feed");
     }, 2000);
   };
 
@@ -287,7 +288,7 @@ const Register = () => {
                       transition={{ delay: 0.4 }}
                       className="text-muted-foreground"
                     >
-                      Redirecting you to login...
+                      Redirecting...
                     </motion.p>
                   </motion.div>
                 ) : (
@@ -493,6 +494,7 @@ const Register = () => {
                               <span>Creating Account...</span>
                             </motion.div>
                           ) : (
+                            <Link to="/feed">
                             <motion.span
                               key="text"
                               initial={{ opacity: 0 }}
@@ -501,6 +503,7 @@ const Register = () => {
                             >
                               Join VeerAayojans
                             </motion.span>
+                             </Link>
                           )}
                         </AnimatePresence>
                       </Button>

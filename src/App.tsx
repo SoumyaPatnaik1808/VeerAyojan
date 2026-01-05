@@ -11,6 +11,7 @@ import FeaturesSection from "./components/FeaturesSection";
 import {Clubs} from "./components/Clubs";
 import Register from "./pages/Register";
 import Feed from "./pages/Feed";
+import Events from "./pages/Events";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/features" element={<FeaturesSection />} />
           <Route path="/register" element={<Register />} />
           <Route path="/feed" element={<Feed />}>  </Route>
+          <Route path="/events" element={<Events />}>  </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

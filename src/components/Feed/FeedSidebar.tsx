@@ -28,6 +28,7 @@ const clubChannels: ClubChannel[] = [
   { id: "ecell", name: "E-Cell VSSUT", icon: Lightbulb, logo: "/E-CELL.jpeg", unread: 2 },
   { id: "souls", name: "Souls", icon: Music, logo: "/Souls.jpeg" },
   { id: "litsoc", name: "Literary Society", icon: BookOpen, logo: "/Litsoc.jpeg" },
+  {id:"enigma", name:"Enigma", icon: Cpu, logo:"/Enigma.jpeg"},
   { id: "pixels", name: "Pixels", icon: Camera, logo: "/Assets/Pixels.jpeg" },
   { id: "quizine", name: "Quizine", icon: Mic2, logo: "/Quizine.jpeg" },
   { id: "sports", name: "Sports Society", icon: Trophy, logo: "/Sports_Society.jpeg" },
@@ -75,9 +76,7 @@ const FeedSidebar = ({ activeChannel, onChannelSelect, className }: FeedSidebarP
             <h3 className="font-semibold text-foreground text-sm truncate">
               Soumya Patnaik
             </h3>
-            <p className="text-xs text-muted-foreground">
-              Mettalurgical and Materials Engineering, 1st Year
-            </p>
+           
           </div>
         </motion.div>
       </div>

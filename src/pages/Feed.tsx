@@ -143,20 +143,6 @@ const Feed = () => {
             <LogOut className="w-5 h-5" />
             <span className="font-medium">Logout</span>
           </motion.button>
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            whileHover={{ scale: 1.05, x: 5 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              setShowActivities(true);
-              setActiveChannel(null);
-            }}
-            className={`flex items-center justify-center p-3 rounded-full backdrop-blur-md border shadow-lg transition-all duration-300 ${showActivities ? "bg-primary text-primary-foreground border-primary" : "bg-background/90 border-border text-muted-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5"}`}
-            title="Your Activities"
-          >
-            <Activity className="w-5 h-5" />
-          </motion.button>
         </div>
       </div>
 
@@ -251,6 +237,19 @@ const Feed = () => {
                 <div className="h-20" />
               </div>
             </div>
+
+            {/* Floating Activities Button */}
+            <motion.button
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowActivities(true)}
+              className="absolute bottom-8 right-8 z-50 flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+            >
+              <Activity className="w-5 h-5" />
+              <span className="font-medium">Your Activities</span>
+            </motion.button>
           </>
         )}
       </div>

@@ -50,7 +50,7 @@ const FeedCard = ({ item, index }: FeedCardProps) => {
         transition={{ duration: 0.25, ease: "easeOut" }}
         className={cn(
           "relative overflow-hidden rounded-2xl",
-          "bg-card/60 dark:bg-card/40 backdrop-blur-xl",
+          "bg-card/60 dark:bg-card/40 backdrop-blur-md",
           "border border-border/30 dark:border-white/5",
           "shadow-soft hover:shadow-glow",
           "transition-shadow duration-300"
@@ -58,12 +58,12 @@ const FeedCard = ({ item, index }: FeedCardProps) => {
       >
         {/* Card Header */}
         <div className="flex items-center gap-3 p-4 pb-3">
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.05 }}
             className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/20"
           >
-            <img 
-              src={item.clubLogo} 
+            <img
+              src={item.clubLogo}
               alt={item.clubName}
               className="w-full h-full object-cover"
             />
@@ -83,7 +83,7 @@ const FeedCard = ({ item, index }: FeedCardProps) => {
         </div>
 
         {/* Media Preview with Parallax-lite */}
-        <motion.div 
+        <motion.div
           className="relative aspect-video overflow-hidden group cursor-pointer"
           onClick={() => setIsExpanded(true)}
         >
@@ -93,9 +93,9 @@ const FeedCard = ({ item, index }: FeedCardProps) => {
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
+
           {item.mediaType === "video" && (
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.9, opacity: 0.8 }}
               whileHover={{ scale: 1 }}
               className="absolute inset-0 flex items-center justify-center"
@@ -125,15 +125,15 @@ const FeedCard = ({ item, index }: FeedCardProps) => {
                 onClick={handleLike}
                 className={cn(
                   "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200",
-                  isLiked 
-                    ? "bg-rose-500/10 text-rose-500 dark:bg-rose-500/20" 
+                  isLiked
+                    ? "bg-rose-500/10 text-rose-500 dark:bg-rose-500/20"
                     : "text-muted-foreground hover:bg-secondary/50"
                 )}
               >
                 <Heart className={cn("w-4 h-4 transition-transform", isLiked && "fill-current scale-110")} />
                 <span>{interestedCount}</span>
               </motion.button>
-              
+
               <motion.button
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.92 }}
@@ -149,8 +149,8 @@ const FeedCard = ({ item, index }: FeedCardProps) => {
               onClick={() => setIsSaved(!isSaved)}
               className={cn(
                 "p-2 rounded-full transition-all duration-200",
-                isSaved 
-                  ? "bg-primary/10 text-primary" 
+                isSaved
+                  ? "bg-primary/10 text-primary"
                   : "text-muted-foreground hover:bg-secondary/50"
               )}
             >
@@ -195,8 +195,8 @@ const FeedCard = ({ item, index }: FeedCardProps) => {
                 <div className="p-6 space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary/30">
-                      <img 
-                        src={item.clubLogo} 
+                      <img
+                        src={item.clubLogo}
                         alt={item.clubName}
                         className="w-full h-full object-cover"
                       />
@@ -237,8 +237,8 @@ const FeedCard = ({ item, index }: FeedCardProps) => {
                       onClick={() => setIsSaved(!isSaved)}
                       className={cn(
                         "p-3 rounded-xl border transition-colors",
-                        isSaved 
-                          ? "bg-primary/10 border-primary/30 text-primary" 
+                        isSaved
+                          ? "bg-primary/10 border-primary/30 text-primary"
                           : "border-border bg-secondary/50 hover:bg-secondary"
                       )}
                     >

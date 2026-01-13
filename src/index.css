@@ -87,7 +87,7 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
   }
 
   body {
@@ -129,7 +129,7 @@
   }
 
   .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-2xl shadow-soft;
+    @apply bg-card/60 backdrop-blur-md border border-border/50 rounded-2xl shadow-soft;
   }
 
   .glass-card-hover {

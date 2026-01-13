@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
 import Particles from "@/components/Animations/Particles";
 import { Link } from "react-router-dom";
+import MistBackground from "@/components/Animations/MistBackground";
 
 const interestOptions = [
   { id: "robotics", label: "Robotics", icon: "🤖" },
@@ -26,7 +27,7 @@ const Register = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
-  
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -106,16 +107,16 @@ const Register = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    
+
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
+
     setIsSuccess(true);
-    
+
     // Redirect after success animation
     setTimeout(() => {
       navigate("/feed");
@@ -151,8 +152,8 @@ const Register = () => {
 
   const chipVariants = {
     unselected: { scale: 1, backgroundColor: "rgba(255,255,255,0.05)" },
-    selected: { 
-      scale: 1.05, 
+    selected: {
+      scale: 1.05,
       backgroundColor: "rgba(99, 102, 241, 0.3)",
       transition: { type: "spring" as const, stiffness: 400, damping: 20 }
     },
@@ -162,16 +163,7 @@ const Register = () => {
     <div className="min-h-screen w-full relative overflow-hidden bg-background">
       {/* Particles Background */}
       <div className="absolute inset-0 z-0">
-        <Particles
-          particleColors={["#6366f1", "#818cf8", "#a5b4fc"]}
-          particleCount={600}
-          particleSpread={12}
-          speed={0.08}
-          particleBaseSize={120}
-          moveParticlesOnHover={true}
-          alphaParticles={true}
-          disableRotation={false}
-        />
+        <MistBackground />
       </div>
 
       {/* Ambient Glow Effects */}
@@ -237,7 +229,7 @@ const Register = () => {
           <div className="relative">
             {/* Card Glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500/20 via-blue-500/20 to-indigo-500/20 rounded-3xl blur-xl opacity-50" />
-            
+
             <div className="relative bg-card/80 backdrop-blur-xl rounded-3xl border border-border/30 shadow-2xl p-8 md:p-10">
               {/* Header */}
               <motion.div
@@ -331,7 +323,7 @@ const Register = () => {
                       </AnimatePresence>
                     </motion.div>
 
-                    
+
                     <motion.div
                       custom={1}
                       variants={fieldVariants}
@@ -466,7 +458,7 @@ const Register = () => {
                       </AnimatePresence>
                     </motion.div>
 
-                    
+
 
                     {/* Submit Button */}
                     <motion.div
@@ -495,15 +487,15 @@ const Register = () => {
                             </motion.div>
                           ) : (
                             <Link to="/feed">
-                            <motion.span
-                              key="text"
-                              initial={{ opacity: 0 }}
-                              animate={{ opacity: 1 }}
-                              exit={{ opacity: 0 }}
-                            >
-                              Join VeerAayojans
-                            </motion.span>
-                             </Link>
+                              <motion.span
+                                key="text"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                              >
+                                Join VeerAayojans
+                              </motion.span>
+                            </Link>
                           )}
                         </AnimatePresence>
                       </Button>

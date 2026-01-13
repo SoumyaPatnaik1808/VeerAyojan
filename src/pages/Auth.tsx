@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link, useNavigate } from "react-router-dom";
 import Particles from "@/components/Animations/Particles";
+import MistBackground from "@/components/Animations/MistBackground";
 
 const Auth = () => {
   const [isDark, setIsDark] = useState(true);
@@ -41,20 +42,7 @@ const Auth = () => {
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
       {/* 3D Particle Background */}
       <div className="absolute inset-0 z-0">
-        <Particles
-          particleCount={4000}
-          particleSpread={12}
-          speed={0.05}
-          particleColors={isOrganizer ? ['#1e40af', '#3b82f6', '#d97706', '#f59e0b'] : ['#0891b2', '#06b6d4', '#6366f1', '#818cf8']
-          }
-          moveParticlesOnHover={true}
-          particleHoverFactor={0.5}
-          alphaParticles={true}
-          particleBaseSize={100}
-          sizeRandomness={0.8}
-          cameraDistance={20}
-          className="w-full h-full"
-        />
+        <MistBackground />
       </div>
 
       {/* Theme Toggle */}
@@ -89,33 +77,31 @@ const Auth = () => {
               className="absolute top-1.5 h-11 w-[calc(50%-6px)] rounded-xl"
               animate={{
                 x: isOrganizer ? 0 : "calc(100% + 6px)",
-                background: isOrganizer 
-                  ? "linear-gradient(135deg, #1e40af, #f6573bff)" 
+                background: isOrganizer
+                  ? "linear-gradient(135deg, #1e40af, #f6573bff)"
                   : "linear-gradient(135deg, #f6573bff, #1e40af)",
               }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               style={{
-                boxShadow: isOrganizer 
-                  ? "0 4px 20px rgba(59, 130, 246, 0.4)" 
+                boxShadow: isOrganizer
+                  ? "0 4px 20px rgba(59, 130, 246, 0.4)"
                   : "0 4px 20px rgba(6, 182, 212, 0.4)",
               }}
             />
-            
+
             {/* Toggle Buttons */}
             <div className="relative flex h-full">
               <button
                 onClick={() => setIsOrganizer(true)}
-                className={`flex-1 flex items-center justify-center text-sm font-semibold transition-colors duration-300 rounded-xl ${
-                  isOrganizer ? "text-white" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`flex-1 flex items-center justify-center text-sm font-semibold transition-colors duration-300 rounded-xl ${isOrganizer ? "text-white" : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 Organizer
               </button>
               <button
                 onClick={() => setIsOrganizer(false)}
-                className={`flex-1 flex items-center justify-center text-sm font-semibold transition-colors duration-300 rounded-xl ${
-                  !isOrganizer ? "text-white" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`flex-1 flex items-center justify-center text-sm font-semibold transition-colors duration-300 rounded-xl ${!isOrganizer ? "text-white" : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 Participant
               </button>
@@ -180,26 +166,26 @@ const Auth = () => {
                       <input type="checkbox" className="rounded border-border" />
                       Remember me
                     </label>
-                    
+
                   </div>
 
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <Link to="/organizer"> 
-                    <Button
-                      type="submit"
-                      className="w-full h-11 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
-                    >
-                      Login as Organizer
-                    </Button>
+                    <Link to="/organizer">
+                      <Button
+                        type="submit"
+                        className="w-full h-11 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300"
+                      >
+                        Login as Organizer
+                      </Button>
                     </Link>
-                    
-                    
+
+
                   </motion.div>
 
-                  
+
                 </form>
               </motion.div>
             ) : (
@@ -266,13 +252,13 @@ const Auth = () => {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Link to="/feed">
-                    <Button
-                      type="submit"
-                      className="w-full h-11 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-400 hover:to-indigo-400 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
-                    >
-                      Login as Participant
-                    </Button>
-                     </Link>
+                      <Button
+                        type="submit"
+                        className="w-full h-11 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:from-cyan-400 hover:to-indigo-400 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
+                      >
+                        Login as Participant
+                      </Button>
+                    </Link>
                   </motion.div>
 
                   <p className="text-center text-sm text-muted-foreground">

@@ -165,216 +165,216 @@ const Organizer = () => {
           <ClubChannel clubId={activeChannel} onBack={() => setActiveChannel(null)} />
         ) : (
           <>
-          <ClickSpark sparkColor="#786401ff" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
-            <div className="flex flex-col h-full overflow-y-auto">
-              {/* Mobile Header */}
-              <div className="flex md:hidden items-center justify-between px-4 py-3 border-b border-border/40 bg-background/80 backdrop-blur-md sticky top-0 z-40">
-                <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 -ml-2 hover:bg-secondary/50 rounded-full transition-colors">
-                  <Menu className="w-5 h-5 text-foreground" />
-                </button>
-                <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-secondary/50 transition-colors">
-                  {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                </button>
-              </div>
+            <ClickSpark sparkColor="#786401ff" sparkSize={10} sparkRadius={15} sparkCount={8} duration={400}>
+              <div className="flex flex-col h-full overflow-y-auto">
+                {/* Mobile Header */}
+                <div className="flex md:hidden items-center justify-between px-4 py-3 border-b border-border/40 bg-background/80 backdrop-blur-md sticky top-0 z-40">
+                  <button onClick={() => setIsMobileMenuOpen(true)} className="p-2 -ml-2 hover:bg-secondary/50 rounded-full transition-colors">
+                    <Menu className="w-5 h-5 text-foreground" />
+                  </button>
+                  <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-secondary/50 transition-colors">
+                    {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                  </button>
+                </div>
 
-              <main className="pt-6 pb-12 flex-1">
-              <div className="max-w-4xl mx-auto px-4">
-                {/* Header with Club Indicator & Actions */}
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="sticky top-0 z-30 py-4 bg-background/80 backdrop-blur-xl border-b border-border/30 -mx-4 px-4 mb-6"
-                >
-                  <div className="flex items-center justify-between gap-4 flex-wrap">
-                    {/* Club Indicator */}
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border/50 hover:border-primary/30 transition-all hover:shadow-glow"
+                <main className="pt-6 pb-12 flex-1">
+                  <div className="max-w-4xl mx-auto px-4">
+                    {/* Header with Club Indicator & Actions */}
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="sticky top-0 z-30 py-4 bg-background/80 backdrop-blur-md border-b border-border/30 -mx-4 px-4 mb-6"
                     >
-                      <div className="w-6 h-6 rounded-full overflow-hidden">
-                        <img src="/Enigma.jpeg" alt="Enigma" className="w-full h-full object-cover" />
-                      </div>
-                      <span className="font-semibold text-foreground">Enigma</span>
-                      <ChevronDown className="w-4 h-4 text-muted-foreground" />
-                    </motion.button>
-
-                    {/* Action Buttons */}
-                    <div className="flex items-center gap-3">
-                      <motion.button
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        onClick={() => navigate("/createpost")}
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity shadow-glow"
-                      >
-                        <Plus className="w-4 h-4" />
-                        Create Post
-                      </motion.button>
-                      <motion.button
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary text-secondary-foreground font-medium border border-border/50 hover:border-primary/30 transition-all"
-                      >
-                        <FileText className="w-4 h-4" />
-                        Your Posts
-                      </motion.button>
-                    </div>
-                  </div>
-
-                  {/* Feed Toggle */}
-                  <div className="mt-4 flex justify-center">
-                    <FeedToggle mode={feedMode} onModeChange={setFeedMode} />
-                  </div>
-                </motion.div>
-
-                {/* Upcoming Events Section */}
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                  className="mt-8"
-                >
-                  <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <CalendarIcon className="w-5 h-5 text-primary" />
-                    Upcoming Events
-                  </h2>
-                  <div className="space-y-3">
-                    {upcomingEvents.map((event) => (
-                      <motion.div
-                        key={event.id}
-                        layout
-                        className={cn(
-                          "relative rounded-2xl bg-card/60 backdrop-blur-xl border border-border/50 overflow-hidden transition-all duration-300",
-                          expandedEvent === event.id ? "shadow-glow" : "shadow-soft hover:shadow-glow hover:border-primary/30"
-                        )}
-                      >
+                      <div className="flex items-center justify-between gap-4 flex-wrap">
+                        {/* Club Indicator */}
                         <motion.button
-                          onClick={() => setExpandedEvent(expandedEvent === event.id ? null : event.id)}
-                          className="w-full p-4 text-left"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border/50 hover:border-primary/30 transition-all hover:shadow-glow"
                         >
-                          <div className="flex items-start justify-between gap-4">
-                            <div className="flex-1">
-                              <h3 className="font-semibold text-foreground">{event.title}</h3>
-                              <p className="text-sm text-muted-foreground mt-1 line-clamp-1">{event.description}</p>
-                              <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
-                                <span className="flex items-center gap-1">
-                                  <CalendarIcon className="w-3.5 h-3.5" />
-                                  {event.date}
-                                </span>
-                                <span className="flex items-center gap-1">
-                                  <Clock className="w-3.5 h-3.5" />
-                                  {event.time}
-                                </span>
-                              </div>
-                            </div>
-                            <ChevronDown
-                              className={cn(
-                                "w-5 h-5 text-muted-foreground transition-transform",
-                                expandedEvent === event.id && "rotate-180"
-                              )}
-                            />
+                          <div className="w-6 h-6 rounded-full overflow-hidden">
+                            <img src="/Enigma.jpeg" alt="Enigma" className="w-full h-full object-cover" />
                           </div>
+                          <span className="font-semibold text-foreground">Enigma</span>
+                          <ChevronDown className="w-4 h-4 text-muted-foreground" />
                         </motion.button>
 
-                        <AnimatePresence>
-                          {expandedEvent === event.id && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="border-t border-border/30"
-                            >
-                              <div className="p-4 space-y-4">
-                                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                  <MapPin className="w-4 h-4" />
-                                  <span>{event.venue}</span>
-                                </div>
-                                <p className="text-sm text-foreground/80">{event.description}</p>
+                        {/* Action Buttons */}
+                        <div className="flex items-center gap-3">
+                          <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            onClick={() => navigate("/createpost")}
+                            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity shadow-glow"
+                          >
+                            <Plus className="w-4 h-4" />
+                            Create Post
+                          </motion.button>
+                          <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary text-secondary-foreground font-medium border border-border/50 hover:border-primary/30 transition-all"
+                          >
+                            <FileText className="w-4 h-4" />
+                            Your Posts
+                          </motion.button>
+                        </div>
+                      </div>
 
-                                {/* Summary Section */}
-                                {summaries[event.id] && (
-                                  <motion.div
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    className="p-3 rounded-xl bg-accent/10 border border-accent/20"
-                                  >
-                                    <p className="text-sm text-foreground/80">{summaries[event.id]}</p>
-                                  </motion.div>
-                                )}
+                      {/* Feed Toggle */}
+                      <div className="mt-4 flex justify-center">
+                        <FeedToggle mode={feedMode} onModeChange={setFeedMode} />
+                      </div>
+                    </motion.div>
 
-                                {/* Action Buttons */}
-                                <div className="flex items-center gap-3 pt-2">
-                                  <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    onClick={() => handleSummarize(event.id)}
-                                    disabled={summarizing === event.id || !!summaries[event.id]}
-                                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-accent/20 to-primary/20 border border-accent/30 text-foreground text-sm font-medium hover:border-accent/50 transition-all disabled:opacity-50"
-                                  >
-                                    {summarizing === event.id ? (
-                                      <Loader2 className="w-4 h-4 animate-spin" />
-                                    ) : (
-                                      <Sparkles className="w-4 h-4" />
-                                    )}
-                                    {summaries[event.id] ? "Summarized" : "Summarise with Gemini"}
-                                  </motion.button>
-                                  <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    onClick={() => handleAddToCalendar(event)}
-                                    className="flex items-center gap-2 px-4 py-2 rounded-xl bg-secondary border border-border/50 text-foreground text-sm font-medium hover:border-primary/30 transition-all"
-                                  >
-                                    <CalendarIcon className="w-4 h-4" />
-                                    Add to Calendar
-                                  </motion.button>
-                                </div>
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.section>
-
-                {/* Feed Cards */}
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="mt-8 space-y-6"
-                >
-                  <h2 className="text-lg font-semibold text-foreground">Latest Posts</h2>
-                  {feedData.map((item) => (
-                    <motion.div
-                      key={item.id}
+                    {/* Upcoming Events Section */}
+                    <motion.section
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 }}
+                      className="mt-8"
                     >
-                      <FeedCard item={item} index={item.id} />
-                    </motion.div>
-                  ))}
-                </motion.section>
-              </div>
-              </main>
-              <Footer />
-            </div>
-          </ClickSpark>
+                      <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                        <CalendarIcon className="w-5 h-5 text-primary" />
+                        Upcoming Events
+                      </h2>
+                      <div className="space-y-3">
+                        {upcomingEvents.map((event) => (
+                          <motion.div
+                            key={event.id}
+                            layout
+                            className={cn(
+                              "relative rounded-2xl bg-card/60 backdrop-blur-md border border-border/50 overflow-hidden transition-all duration-300",
+                              expandedEvent === event.id ? "shadow-glow" : "shadow-soft hover:shadow-glow hover:border-primary/30"
+                            )}
+                          >
+                            <motion.button
+                              onClick={() => setExpandedEvent(expandedEvent === event.id ? null : event.id)}
+                              className="w-full p-4 text-left"
+                            >
+                              <div className="flex items-start justify-between gap-4">
+                                <div className="flex-1">
+                                  <h3 className="font-semibold text-foreground">{event.title}</h3>
+                                  <p className="text-sm text-muted-foreground mt-1 line-clamp-1">{event.description}</p>
+                                  <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
+                                    <span className="flex items-center gap-1">
+                                      <CalendarIcon className="w-3.5 h-3.5" />
+                                      {event.date}
+                                    </span>
+                                    <span className="flex items-center gap-1">
+                                      <Clock className="w-3.5 h-3.5" />
+                                      {event.time}
+                                    </span>
+                                  </div>
+                                </div>
+                                <ChevronDown
+                                  className={cn(
+                                    "w-5 h-5 text-muted-foreground transition-transform",
+                                    expandedEvent === event.id && "rotate-180"
+                                  )}
+                                />
+                              </div>
+                            </motion.button>
 
-          {/* Floating Activities Button */}
-          <motion.button
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setShowActivities(true)}
-            className="hidden md:flex absolute bottom-8 right-8 z-50 items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all"
-          >
-            <Activity className="w-5 h-5" />
-            <span className="font-medium">Your Activities</span>
-          </motion.button>
+                            <AnimatePresence>
+                              {expandedEvent === event.id && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  className="border-t border-border/30"
+                                >
+                                  <div className="p-4 space-y-4">
+                                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                                      <MapPin className="w-4 h-4" />
+                                      <span>{event.venue}</span>
+                                    </div>
+                                    <p className="text-sm text-foreground/80">{event.description}</p>
+
+                                    {/* Summary Section */}
+                                    {summaries[event.id] && (
+                                      <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="p-3 rounded-xl bg-accent/10 border border-accent/20"
+                                      >
+                                        <p className="text-sm text-foreground/80">{summaries[event.id]}</p>
+                                      </motion.div>
+                                    )}
+
+                                    {/* Action Buttons */}
+                                    <div className="flex items-center gap-3 pt-2">
+                                      <motion.button
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        onClick={() => handleSummarize(event.id)}
+                                        disabled={summarizing === event.id || !!summaries[event.id]}
+                                        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-accent/20 to-primary/20 border border-accent/30 text-foreground text-sm font-medium hover:border-accent/50 transition-all disabled:opacity-50"
+                                      >
+                                        {summarizing === event.id ? (
+                                          <Loader2 className="w-4 h-4 animate-spin" />
+                                        ) : (
+                                          <Sparkles className="w-4 h-4" />
+                                        )}
+                                        {summaries[event.id] ? "Summarized" : "Summarise with Gemini"}
+                                      </motion.button>
+                                      <motion.button
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        onClick={() => handleAddToCalendar(event)}
+                                        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-secondary border border-border/50 text-foreground text-sm font-medium hover:border-primary/30 transition-all"
+                                      >
+                                        <CalendarIcon className="w-4 h-4" />
+                                        Add to Calendar
+                                      </motion.button>
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </motion.section>
+
+                    {/* Feed Cards */}
+                    <motion.section
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2 }}
+                      className="mt-8 space-y-6"
+                    >
+                      <h2 className="text-lg font-semibold text-foreground">Latest Posts</h2>
+                      {feedData.map((item) => (
+                        <motion.div
+                          key={item.id}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.1 }}
+                        >
+                          <FeedCard item={item} index={item.id} />
+                        </motion.div>
+                      ))}
+                    </motion.section>
+                  </div>
+                </main>
+                <Footer />
+              </div>
+            </ClickSpark>
+
+            {/* Floating Activities Button */}
+            <motion.button
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowActivities(true)}
+              className="hidden md:flex absolute bottom-8 right-8 z-50 items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-xl transition-all"
+            >
+              <Activity className="w-5 h-5" />
+              <span className="font-medium">Your Activities</span>
+            </motion.button>
           </>
         )}
       </div>

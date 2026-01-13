@@ -7,6 +7,7 @@ import ClickSpark from '@/components/Animations/ClickSpark';
 import { Clubs } from "@/components/Clubs";
 import { ParticleTextEffect } from "@/components/Animations/particle-text-effect";
 import { Navnew } from "@/components/Navnew";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
   return (
@@ -19,22 +20,29 @@ const Index = () => {
         duration={400}
       >
         <div className="relative z-10">
-          <ParticleTextEffect />
+          <div className="hidden md:block">
+            <ParticleTextEffect />
+          </div>
           <main>
-            <Navnew />
-              <HeroSection />
+            <div className="hidden md:block">
+              <Navnew />
+            </div>
+            <div className="md:hidden">
+              <Navbar />
+            </div>
+            <HeroSection />
             <LogoSection />
-              <div id="clubs">
-                <Clubs />
-              </div>
-              <div id="features">
-                <FeaturesSection />
-              </div>
-              <div id="about">
-                <WhySection />
-              </div>
+            <div id="clubs">
+              <Clubs />
+            </div>
+            <div id="features">
+              <FeaturesSection />
+            </div>
+            <div id="about">
+              <WhySection />
+            </div>
           </main>
-         
+
         </div>
       </ClickSpark>
     </div>

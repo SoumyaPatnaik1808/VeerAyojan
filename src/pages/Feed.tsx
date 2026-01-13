@@ -11,7 +11,7 @@ import { YourActivities } from "@/components/Feed/YourActivities";
 // Mock data for demonstration
 const MOCK_FEED_ITEMS: FeedItem[] = [
   {
-    id: 1,
+    id: 5,
     clubId: "robotics",
     clubName: "Robotics Club",
     clubLogo: "/Robotics.jpeg",
@@ -75,17 +75,17 @@ const MOCK_FEED_ITEMS: FeedItem[] = [
     isSaved: false,
   },
   {
-    id: 5,
+    id: 1,
     clubId: "enigma",
     clubName: "Enigma",
     clubLogo: "/Enigma.jpeg",
-    title: "CodeWars 2024",
-    description: "Battle of the bits! Join us for the ultimate competitive programming contest.",
-    fullContent: "Enigma presents CodeWars 2024. A 3-hour intense coding battle on CodeChef. Solve algorithmic problems and win exciting prizes. Open to all branches and years. Workshop for beginners will be held this weekend.",
+    title: "TechSprint - Leverage AI",
+    description: "Welcome to TechSprint , hosted by Google Developer Group on Campus Veer Surendra Sai University of Technology  and powered by Hack2skill .",
+    fullContent: "TechSprint is a fully GDG on Campus Organizer-led, open innovation hackathon  where student developers get to identify real challenges in their campuses or local communities and build practical solutions using Google technologies . This is your chance to turn ideas into action, learn hands-on skills, and create an impact that matters.",
     date: "Today",
     time: "8:00 PM",
     mediaType: "image",
-    mediaSrc: "https://images.unsplash.com/photo-1515879490122-f804028b552c?q=80&w=2070&auto=format&fit=crop",
+    mediaSrc: "https://h2svision.github.io/publicAssets/TechSprint_email_Banner.png",
     interested: 150,
     isLiked: false,
     isSaved: true,
@@ -189,15 +189,15 @@ const Feed = () => {
               </div>
 
               <div className="relative flex items-center justify-center p-3 md:p-4">
-                <FeedToggle 
-                  mode={feedMode} 
+                <FeedToggle
+                  mode={feedMode}
                   onModeChange={(mode) => {
                     if (mode === "upcomingevents") {
                       navigate("/events");
                     } else {
                       setFeedMode(mode);
                     }
-                  }} 
+                  }}
                 />
 
                 <button
@@ -282,7 +282,7 @@ const Feed = () => {
                 <FeedSidebar activeChannel={activeChannel} onChannelSelect={(id) => { setActiveChannel(id); setShowActivities(false); setIsMobileMenuOpen(false); }} />
               </div>
               <div className="p-4 border-t border-border/40 space-y-2">
-               
+
                 <button
                   onClick={() => navigate("/")}
                   className="flex items-center gap-3 w-full px-4 py-3 rounded-xl hover:bg-destructive/10 hover:text-destructive transition-colors text-muted-foreground"

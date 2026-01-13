@@ -5,7 +5,8 @@ import {
   Users,
   Bell,
   LayoutDashboard,
-  Newspaper
+  Newspaper,
+  Timer
 } from "lucide-react";
 
 const FeaturesSection = () => {
@@ -99,9 +100,9 @@ const FeaturesSection = () => {
             className="glass-card-hover p-6 group rounded-2xl border border-white/5 bg-white/5"
           >
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center mb-4 shadow-soft group-hover:scale-110 transition-transform duration-300">
-              <Newspaper className="w-6 h-6 text-white" />
+              <Timer className="w-6 h-6 text-white" />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-foreground">Newsletter Feed</h3>
+            <h3 className="text-xl font-semibold mb-2 text-foreground">Upcoming Events</h3>
             <p className="text-muted-foreground leading-relaxed">
               Personalized announcements and updates that matter to you, filtered by your interests.
             </p>

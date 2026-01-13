@@ -43,7 +43,7 @@ function LogoSection() {
       {/* Basic horizontal loop */}
       <LogoLoop
         logos={imageLogos}
-        speed={130}
+        speed={100}
         direction="left"
         logoHeight={120}
         gap={100}

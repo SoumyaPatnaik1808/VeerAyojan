@@ -1,5 +1,5 @@
 
-# 🎓 VeerAyojan - Campus Event Management Platform
+# 🎓 VeerAyojans - Campus Event Management Platform
 
 <div align="center">
 

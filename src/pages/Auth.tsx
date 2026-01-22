@@ -111,11 +111,11 @@ const Auth = () => {
 
         {/* Sliding Content */}
         <div className="relative overflow-hidden min-h-[400px]">
-          <AnimatePresence mode="wait" custom={isOrganizer ? 1 : -1}>
+          <AnimatePresence mode="wait" custom={isOrganizer ? -1 : 1}>
             {isOrganizer ? (
               <motion.div
                 key="organizer"
-                custom={1}
+                custom={-1}
                 variants={slideVariants}
                 initial="enter"
                 animate="center"
@@ -191,7 +191,7 @@ const Auth = () => {
             ) : (
               <motion.div
                 key="participant"
-                custom={-1}
+                custom={1}
                 variants={slideVariants}
                 initial="enter"
                 animate="center"

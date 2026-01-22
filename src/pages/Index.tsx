@@ -27,12 +27,12 @@ const Index = () => {
             <div className="hidden md:block">
               <Navnew />
             </div>
-            <div className="md:hidden">
+            <div className="md:hidden fixed top-0 left-0 w-full z-20">
               <Navbar />
             </div>
             <HeroSection />
             <LogoSection />
-            <div id="clubs">
+            <div id="clubs" className="pt-16 md:pt-0">
               <Clubs />
             </div>
             <div id="features">
